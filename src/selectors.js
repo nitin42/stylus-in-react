@@ -7,16 +7,16 @@ const domElements = require('html-tags');
  * @param { array } selector 
  */
 function getParentNode(selector) {
-	if (selector !== null) {
-		const selectorName = selector[0].split(':')[0];
+  if (selector !== null) {
+    const selectorName = selector[0].split(':')[0];
 
-		if (!domElements.includes(selectorName)) {
-			throw new Error(`'${selectorName}' is not a valid HTML element.`);
-		}
-		return selectorName;
-	}
+    if (!domElements.includes(selectorName)) {
+      throw new Error(`'${selectorName}' is not a valid HTML element.`);
+    }
+    return selectorName;
+  }
 
-	return;
+  return;
 }
 
 module.exports = getParentNode;
