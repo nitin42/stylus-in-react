@@ -10,7 +10,7 @@
 
 ## Introduction
 
-Blah blah blah! I assume you know what [stylus]() is and how it can be  used in an expressive way to generate CSS. With `stylus-in-react`, you can directly style your React components with stylus.
+Blah blah blah! I assume you know what [stylus](http://stylus-lang.com/) is and how it can be  used in an expressive way to generate CSS. With `stylus-in-react`, you can directly style your React components with stylus.
 
 Sound's cool !! Let's see how ...
 
@@ -66,18 +66,18 @@ div
 
 Supported features - 
 
-* [variables]()
-* [mixins]()
-* [functions]()
-* [built-in functions]()
-* [selectors]() (pseudo selectors, nested selectors, descendant-selectors)
-* [interpolations]()
-* [operators]()
-* [keywords arguments]()
-* [rest params]()
-* [conditionals]()
-* [block]()
-* [char escaping]()
+* [variables](http://stylus-lang.com/docs/variables.html)
+* [mixins](http://stylus-lang.com/docs/mixins.html)
+* [functions](http://stylus-lang.com/docs/functions.html)
+* [built-in functions](http://stylus-lang.com/docs/bifs.html)
+* [selectors](http://stylus-lang.com/docs/selectors.html) (pseudo selectors, nested selectors, descendant-selectors)
+* [interpolations](http://stylus-lang.com/docs/interpolation.html)
+* [operators](http://stylus-lang.com/docs/operators.html)
+* [keywords arguments](http://stylus-lang.com/docs/kwargs.html)
+* [rest params](http://stylus-lang.com/docs/vargs.html)
+* [conditionals](http://stylus-lang.com/docs/conditionals.html)
+* [block](http://stylus-lang.com/docs/block.html)
+* [char escaping](http://stylus-lang.com/docs/escape.html)
 
 But what about `keyframes`, `media` and other `@rules` ?? **Work in progress!!**
 
@@ -89,4 +89,7 @@ Stylus is “pythonic” (i.e. indentation-based) so it will throw errors when i
   <img src="http://g.recordit.co/4WBY9wPAdz.gif">
 </p>
 
+## License
+
+MIT
 
