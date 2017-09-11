@@ -8,25 +8,25 @@ const prefixAll = require('inline-style-prefixer/static');
  * @param { string } root root element
  */
 function getStylesheet(rules, root) {
-	if (!domElements.includes(root)) {
-		return {};
-	}
+  if (!domElements.includes(root)) {
+    return {};
+  }
 
-	let arr = [];
+  let arr = [];
 
-	rules.forEach(rule => {
-		if (rule.selectors[0] === root) {
-			rule.declarations.forEach(decl => {
-				arr.push(prefixAll({ [camelCase(decl.property)]: decl.value }));
-			});
-		} else {
-			rule.declarations.forEach(decl => {
-				arr.push(prefixAll({ [rule.selectors[0].replace(root, '')]: { [camelCase(decl.property)]: decl.value } }));
-			});
-		}
-	});
+  rules.forEach(rule => {
+    if (rule.selectors[0] === root) {
+      rule.declarations.forEach(decl => {
+        arr.push(prefixAll({ [camelCase(decl.property)]: decl.value }));
+      });
+    } else {
+      rule.declarations.forEach(decl => {
+        arr.push(prefixAll({ [rule.selectors[0].replace(root, '')]: { [camelCase(decl.property)]: decl.value } }));
+      });
+    }
+  });
 
-	return arr;
+  return arr;
 }
 
 module.exports = getStylesheet;
