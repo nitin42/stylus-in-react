@@ -1,5 +1,7 @@
 # stylus-in-react
 
+⚠️ WIP
+
 > Style React components with Stylus
 
 <br/>
@@ -44,6 +46,8 @@ class App extends React.Component {
 ```
 
 ## Install
+
+**NOT RELEASED YET**
 
 ```
 npm install stylus-in-react
