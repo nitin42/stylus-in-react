@@ -11,38 +11,38 @@ const getParentNode = require('./selectors');
  * @param { string } stylusCode 
  */
 function parseStylus(stylusCode) {
-	let AST, rules, stylesheet, hash, selectors, element;
+  let AST, rules, stylesheet, hash, selectors, element;
 
-	window.stylus.render(stylusCode, { filename: 'source.css' }, (err, css) => {
-		// throws parse errors
-		if (err) {
-			throw new Error(err);
-		}
+  window.stylus.render(stylusCode, { filename: 'source.css' }, (err, css) => {
+    // throws parse errors
+    if (err) {
+      throw new Error(err);
+    }
 
-		// Generate css AST
-		AST = parser.parse(css, { source: 'css' });
+    // Generate css AST
+    AST = parser.parse(css, { source: 'css' });
 
-		// Get the root selector
-		selectors = AST.stylesheet.rules[0] !== undefined ? AST.stylesheet.rules[0].selectors : null;
+    // Get the root selector
+    selectors = AST.stylesheet.rules[0] !== undefined ? AST.stylesheet.rules[0].selectors : null;
 
-		// Set the root element
-		element = getParentNode(selectors);
+    // Set the root element
+    element = getParentNode(selectors);
 
-		// Style rules
-		rules = AST.stylesheet.rules;
+    // Style rules
+    rules = AST.stylesheet.rules;
 
-		// Create array of styles
-		stylesheet = getStylesheet(rules, element);
+    // Create array of styles
+    stylesheet = getStylesheet(rules, element);
 
-		// Pass styles as css rules to glamor's css constructor
-		hash = glamor.css(stylesheet);
-	});
+    // Pass styles as css rules to glamor's css constructor
+    hash = glamor.css(stylesheet);
+  });
 
-	return {
-		hash,
-		element,
-		stylesheet,
-	};
+  return {
+    hash,
+    element,
+    stylesheet,
+  };
 }
 
 module.exports = parseStylus;
