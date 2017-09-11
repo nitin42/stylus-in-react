@@ -10,7 +10,7 @@
 
 ## Introduction
 
-No blah blah! I assume you know what [stylus]() is and how it can be  used in an expressive way to generate CSS. With `stylus-in-react`, you can directly style your React components with stylus.
+Blah blah blah! I assume you know what [stylus]() is and how it can be  used in an expressive way to generate CSS. With `stylus-in-react`, you can directly style your React components with stylus.
 
 Sound's cool !! Let's see how ...
 
