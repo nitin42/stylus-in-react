@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stylus custom parser basic selector 1`] = `
+Object {
+  "element": "button",
+  "hash": Object {
+    "data-css-1tpbuej": "",
+  },
+  "stylesheet": Array [
+    Object {
+      "borderRadius": "4px",
+    },
+    Object {
+      "border": "2px solid #808080",
+    },
+    Object {
+      "color": "#ffc0cb",
+    },
+    Object {
+      ":hover": Object {
+        "color": "#800080",
+      },
+    },
+  ],
+}
+`;
+
+exports[`stylus custom parser works with @block 1`] = `
+Object {
+  "element": "div",
+  "hash": Object {
+    "data-css-16uf9cy": "",
+  },
+  "stylesheet": Array [
+    Object {
+      "width": "20px",
+    },
+    Object {
+      "height": "20px",
+    },
+  ],
+}
+`;
+
+exports[`stylus custom parser works with built-in functions 1`] = `
+Object {
+  "element": "button",
+  "hash": Object {
+    "data-css-1xlcwgb": "",
+  },
+  "stylesheet": Array [
+    Object {
+      "color": "#0f0",
+    },
+    Object {
+      "backgroundColor": "#fff",
+    },
+  ],
+}
+`;
+
+exports[`stylus custom parser works with char escaping 1`] = `
+Object {
+  "element": "div",
+  "hash": Object {
+    "data-css-fjjr1s": "",
+  },
+  "stylesheet": Array [
+    Object {
+      "padding": "3px",
+    },
+  ],
+}
+`;
+
+exports[`stylus custom parser works with conditionals 1`] = `
+Object {
+  "element": "div",
+  "hash": Object {
+    "data-css-1xgqhfw": "",
+  },
+  "stylesheet": Array [
+    Object {
+      "margin": "5px 10px",
+    },
+  ],
+}
+`;
+
+exports[`stylus custom parser works with functions 1`] = `
+Object {
+  "element": "button",
+  "hash": Object {
+    "data-css-1r0s7ik": "",
+  },
+  "stylesheet": Array [
+    Object {
+      "padding": "30px",
+    },
+  ],
+}
+`;
+
+exports[`stylus custom parser works with interpolations 1`] = `
+Object {
+  "element": "button",
+  "hash": Object {
+    "data-css-llmc5k": "",
+  },
+  "stylesheet": Array [
+    Object {
+      "borderRadius": "1px 2px/3px 4px",
+    },
+  ],
+}
+`;
+
+exports[`stylus custom parser works with mixins 1`] = `
+Object {
+  "element": undefined,
+  "hash": Object {},
+  "stylesheet": Object {},
+}
+`;
+
+exports[`stylus custom parser works with operators (usage with mixins) 1`] = `
+Object {
+  "element": "body",
+  "hash": Object {
+    "data-css-tn55bb": "",
+  },
+  "stylesheet": Array [
+    Object {
+      "padding": "5px",
+    },
+  ],
+}
+`;
+
+exports[`stylus custom parser works with pseudo selectors 1`] = `
+Object {
+  "element": "button",
+  "hash": Object {
+    "data-css-drp6v7": "",
+  },
+  "stylesheet": Array [
+    Object {
+      ":focus": Object {
+        "outline": "none",
+      },
+    },
+    Object {
+      ":hover": Object {
+        "color": "#ffc0cb",
+      },
+    },
+    Object {
+      ":active": Object {
+        "outline": "none",
+      },
+    },
+  ],
+}
+`;
+
+exports[`stylus custom parser works with rest params 1`] = `
+Object {
+  "element": "div",
+  "hash": Object {
+    "data-css-10ag0uy": "",
+  },
+  "stylesheet": Array [
+    Object {
+      "boxShadow": "1px 2px 5px #eee",
+    },
+  ],
+}
+`;
