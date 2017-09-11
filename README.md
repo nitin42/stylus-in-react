@@ -49,6 +49,14 @@ class App extends React.Component {
 npm install stylus-in-react
 ```
 
+After you're done with the installation, place this in your `index.html`
+
+```
+<script src="https://cdn.rawgit.com/nitin42/e860b57e7d72a0cdc34ae0388cd8c6e9/raw/dae9a1a254b26ea951903cbb2d918e13f63db5e0/stylus.min.js"></script>
+```
+
+**IMPORTANT - This is required to use Stylus in browser**
+
 This also depends on React so make sure you've already installed it!
 
 ## Usage
