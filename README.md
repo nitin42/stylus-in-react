@@ -74,6 +74,23 @@ div
 `
 ```
 
+### Creating a stylus component
+
+To create a stylus component, you need to pass an element name for eg - `Button` like this 
+
+<p align="center">
+  <img src="./images/One.png">
+</p>
+
+It's weird I know but this will be straighten out soon 😉
+
+Also this will be give errors (classname is not supported)
+
+<p align="center">
+  <img src="./images/Two.png">
+</p>
+
+
 ## ** Supported stylus features **
 
 Supported features - 
