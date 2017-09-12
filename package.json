@@ -1,6 +1,6 @@
 {
-  "name": "stylus-in-js",
-  "version": "1.0.0-beta0",
+  "name": "stylus-in-react",
+  "version": "1.0.0-beta1",
   "description": "Style React components with Stylus",
   "main": "build/main.js",
   "author": "Nitin Tulswani",
