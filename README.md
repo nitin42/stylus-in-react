@@ -126,29 +126,29 @@ Work in progress!
 
 `stylus-in-react` automatically adds all the required prefixes for the browser versions -
 
-Chrome: 46+
+**Chrome: 46+**
 
-Android (Chrome): 46+
+**Android (Chrome): 46+**
 
-Android (Stock Browser): 4+
+**Android (Stock Browser): 4+**
 
-Android (UC): 9+
+**Android (UC): 9+**
 
-Firefox: 40+
+**Firefox: 40+**
 
-Safari: 8+
+**Safari: 8+**
 
-iOS (Safari): 8+
+**iOS (Safari): 8+**
 
-Opera: 16+
+**Opera: 16+**
 
-Opera (Mini): 12+
+**Opera (Mini): 12+**
 
-IE: 11+
+**IE: 11+**
 
-IE (Mobile): 11+
+**IE (Mobile): 11+**
 
-Edge: 12+
+**Edge: 12+**
 
 #### 3. Indentation ?
 
