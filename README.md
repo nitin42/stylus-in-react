@@ -112,7 +112,7 @@ But what about `keyframes`, `media` and other `@rules` ?? **Work in progress!!**
 
 ## ** Caveats **
 
-Stylus is “pythonic” (i.e. indentation-based) so it will throw errors when indentation is not correct.
+**Stylus is “pythonic” (i.e. indentation-based) so it will throw errors when indentation is not correct.**
 
 <p align="center">
   <img src="http://g.recordit.co/4WBY9wPAdz.gif">
