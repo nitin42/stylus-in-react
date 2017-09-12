@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 
-import createStylusComponent from '../build/main';
+import stylus from '../src/index';
 
-const Container = createStylusComponent`
+const Container = stylus`
 para-color = mistyrose
 
 div
@@ -17,7 +17,7 @@ div
     color darken(para-color, 10)
 `
 
-const Input = createStylusComponent`
+const Input = stylus`
 input
   padding 4px
   width 80px
@@ -31,7 +31,7 @@ input
     width percentage(.15)
 `
 
-const Button = createStylusComponent`
+const Button = stylus`
 choices = 3px 4px 5px 7px
 
 border-radius(n)
@@ -52,7 +52,7 @@ button
   cursor pointer
 `
 
-const Image = createStylusComponent`
+const Image = stylus`
 image-styles(width, height, border, radius)
   margin-top 30px
   width width
