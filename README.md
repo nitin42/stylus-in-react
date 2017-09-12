@@ -118,7 +118,7 @@ Supported features -
 
 ## FAQs
 
-### 1. What about `keyframes`, `media` and other `@rules` ??
+### 1. What about `keyframes`, `media` and other `@rules` ?
 
 Work in progress!
 
