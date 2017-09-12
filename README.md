@@ -12,9 +12,9 @@
 
 ## Introduction
 
-Blah blah blah! I assume you know what [stylus](http://stylus-lang.com/) is and how it can be  used in an expressive way to generate CSS. With `stylus-in-react`, you can directly style your React components with stylus.
+I assume you know what [stylus](http://stylus-lang.com/) is and how it can be  used in an expressive way to generate CSS. With `stylus-in-react`, you can directly style your React components with Stylus.
 
-Sound's cool !! Let's see how ...
+Sound's cool! Let's see how...
 
 **Example**
 
@@ -52,27 +52,46 @@ class App extends React.Component {
 ```
 npm install stylus-in-react
 ```
+This also depends on React so make sure you've already installed it!
 
 After you're done with the installation, place this in your `index.html`
+
+**IMPORTANT - This is required for client side usage of Stylus**
 
 ```
 <script src="https://cdn.rawgit.com/nitin42/e860b57e7d72a0cdc34ae0388cd8c6e9/raw/dae9a1a254b26ea951903cbb2d918e13f63db5e0/stylus.min.js"></script>
 ```
 
-**IMPORTANT - This is required to use Stylus in browser**
-
-This also depends on React so make sure you've already installed it!
 
 ## Usage
-Zero config, zero setup and no new api to learn. Just use 'stylus\`\`' and you are good to go.
+No new api to learn. Just use 'stylus\`\`' and you are good to go.
 
 ```jsx
-const DIV = stylus`
+const StyledDiv = stylus`
 div
   padding 20px
   width 400px
 `
+
+<StyledDiv>Hello World</StyledDiv>
 ```
+
+### Creating a Stylus component
+
+To create a Stylus component, you need to pass an element name for eg - `button` like this 
+
+<p align="center">
+  <img src="./images/One.png">
+</p>
+
+It's weird I know but this will be straighten out soon 😉
+
+**Note** - This will give error (**classname is not supported**)
+
+<p align="center">
+  <img src="./images/Two.png">
+</p>
+
 
 ## ** Supported stylus features **
 
@@ -95,7 +114,7 @@ But what about `keyframes`, `media` and other `@rules` ?? **Work in progress!!**
 
 ## ** Caveats **
 
-Stylus is “pythonic” (i.e. indentation-based) so it will throw errors when indentation is not correct.
+**Stylus is “pythonic” (i.e. indentation-based) so it will throw errors when indentation is not correct.**
 
 <p align="center">
   <img src="http://g.recordit.co/4WBY9wPAdz.gif">
