@@ -118,10 +118,12 @@ Supported features -
 
 ## FAQs
 
-**1. What about `keyframes`, `media` and other `@rules` ??**<br/>
+#### 1. What about `keyframes`, `media` and other `@rules` ??
+
 Work in progress!
 
-**2. Vendor prefixes ?**<br/>
+#### 2. Vendor prefixes ?
+
 `stylus-in-react` automatically adds all the required prefixes for the browser versions -
 
 Chrome: 46+
@@ -148,10 +150,12 @@ IE (Mobile): 11+
 
 Edge: 12+
 
-**3. Indentation ?**<br/>
+#### 3. Indentation ?
+
 Yup! It's weird I know but this will be straighten out soon 😉
 
-**4. How it works ?**<br/>
+#### 4. How it works ?
+
 [Glamor](https://github.com/threepointone/glamor) by [Sunil Pai](https://twitter.com/threepointone).
 
 ## License
