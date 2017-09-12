@@ -84,8 +84,6 @@ To create a Stylus component, you need to pass an element name for eg - `button`
   <img src="./images/One.png">
 </p>
 
-It's weird I know but this will be straighten out soon 😉
-
 **Note** - This will give error (**classname is not supported**)
 
 <p align="center">
@@ -110,8 +108,6 @@ Supported features -
 * [block](http://stylus-lang.com/docs/block.html)
 * [char escaping](http://stylus-lang.com/docs/escape.html)
 
-But what about `keyframes`, `media` and other `@rules` ?? **Work in progress!!**
-
 ## ** Caveats **
 
 **Stylus is “pythonic” (i.e. indentation-based) so it will throw errors when indentation is not correct.**
@@ -119,6 +115,44 @@ But what about `keyframes`, `media` and other `@rules` ?? **Work in progress!!**
 <p align="center">
   <img src="http://g.recordit.co/4WBY9wPAdz.gif">
 </p>
+
+## FAQs
+
+**1. What about `keyframes`, `media` and other `@rules` ??**<br/>
+Work in progress!
+
+**2. Vendor prefixes ?**<br/>
+`stylus-in-react` automatically adds all the required prefixes for the browser versions -
+
+Chrome: 46+
+
+Android (Chrome): 46+
+
+Android (Stock Browser): 4+
+
+Android (UC): 9+
+
+Firefox: 40+
+
+Safari: 8+
+
+iOS (Safari): 8+
+
+Opera: 16+
+
+Opera (Mini): 12+
+
+IE: 11+
+
+IE (Mobile): 11+
+
+Edge: 12+
+
+**3. Indentation ?**<br/>
+Yup! It's weird I know but this will be straighten out soon 😉
+
+**4. How it works ?**<br/>
+[Glamor](https://github.com/threepointone/glamor) by [Sunil Pai](https://twitter.com/threepointone).
 
 ## License
 
