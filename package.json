@@ -1,0 +1,53 @@
+{
+  "name": "stylus-in-js",
+  "version": "1.0.0-beta0",
+  "description": "Style React components with Stylus",
+  "main": "build/main.js",
+  "author": "Nitin Tulswani",
+  "license": "MIT",
+  "dependencies": {
+    "camel-case": "^3.0.0",
+    "css": "^2.2.1",
+    "glamor": "^2.20.40",
+    "html-tags": "^2.0.0",
+    "inline-style-prefixer": "^3.0.7"
+  },
+  "peerDependencies": {
+    "react": "^15.6.1"
+  },
+  "repository": {
+    "url": "https://github.com/nitin42/stylus-in-react",
+    "type": "git"
+  },
+  "files": [
+    "build"
+  ],
+  "keywords": [
+    "Stylus",
+    "React",
+    "css-in-js",
+    "css",
+    "parse css"
+  ],
+  "devDependencies": {
+    "babel-loader": "^7.1.2",
+    "babel-preset-react-app": "^3.0.2",
+    "jest": "^21.0.2",
+    "jest-cli": "^21.0.2",
+    "react-dom": "^15.6.1",
+    "react-test-renderer": "^15.6.1",
+    "stylus": "^0.54.5",
+    "webpack": "^3.5.6",
+    "webpack-dev-server": "^2.7.1",
+    "webworkify-webpack": "^2.0.5"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "NODE_ENV=production ./node_modules/.bin/webpack-dev-server --content-base ./public --config ./webpack.config.dev.js --hot",
+    "prebuild": "rm -rf ./build",
+    "build": "NODE_ENV=production ./node_modules/.bin/webpack --config ./webpack.config.js --progress"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
