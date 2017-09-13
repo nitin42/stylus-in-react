@@ -7,6 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "camel-case": "^3.0.0",
+    "common-tags": "^1.4.0",
     "css": "^2.2.1",
     "glamor": "^2.20.40",
     "html-tags": "^2.0.0",
@@ -33,8 +34,8 @@
     "babel-loader": "^7.1.2",
     "babel-preset-react-app": "^3.0.2",
     "jest": "^21.0.2",
-    "react": "^15.6.1",
     "jest-cli": "^21.0.2",
+    "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-test-renderer": "^15.6.1",
     "stylus": "^0.54.5",
