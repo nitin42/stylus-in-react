@@ -33,7 +33,6 @@ function parseStylus(stylusCode) {
 
     // Create array of styles
     stylesheet = getStylesheet(rules, element);
-
     // Pass styles as css rules to glamor's css constructor
     hash = glamor.css(stylesheet);
   });
