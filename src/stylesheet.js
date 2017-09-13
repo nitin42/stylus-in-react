@@ -15,17 +15,30 @@ function getStylesheet(rules, root) {
   let arr = [];
 
   rules.forEach(rule => {
-    if (rule.selectors[0] === root) {
-      rule.declarations.forEach(decl => {
-        arr.push(prefixAll({ [camelCase(decl.property)]: decl.value }));
-      });
-    } else {
-      rule.declarations.forEach(decl => {
-        arr.push(prefixAll({ [rule.selectors[0].replace(root, '')]: { [camelCase(decl.property)]: decl.value } }));
+    if (rule.type !== 'media') {
+      if (rule.selectors[0] === root) {
+        rule.declarations.forEach(decl => {
+          arr.push(prefixAll({ [camelCase(decl.property)]: decl.value }));
+        });
+      } else {
+        rule.declarations.forEach(decl => {
+          arr.push(prefixAll({ [rule.selectors[0].replace(root, '')]: { [camelCase(decl.property)]: decl.value } }));
+        });
+      }
+    } 
+    
+    if (rule.type === 'media') {
+      console.log(rule);
+      rule.rules.forEach(mediaRule => {
+        if (mediaRule.selectors[0] === root) {
+          mediaRule.declarations.forEach(decl => {
+            arr.push({ [`@media ${rule.media}`]: { [camelCase(decl.property)] : decl.value }});
+          });
+        }
       });
     }
   });
-
+  
   return arr;
 }
 
