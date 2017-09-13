@@ -1,4 +1,5 @@
 const React = require('react');
+const processStylusCode = require('./processStylusCode');
 const parseStylus = require('./parse');
 
 /**
@@ -7,7 +8,7 @@ const parseStylus = require('./parse');
  * @param {string} stylusCode 
  */
 function createStylusComponent(stylusCode) {
-  const { hash, element } = parseStylus(stylusCode[0]);
+  const { hash, element } = parseStylus(processStylusCode(stylusCode[0]));
 
   // Create stylus component
   class StylusComponent extends React.Component {
