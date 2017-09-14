@@ -25,7 +25,7 @@ Sound's cool! Let's see how...
 import React from 'react';
 import stylus from 'stylus-in-react';
 
-const Button = stylus`
+const Button = stylus(`
 button-styles(width, radius, style, color)
   border-radius radius
   border width style color
@@ -37,7 +37,7 @@ button
   &:hover
     color pink
     background-color lighten(mistyrose, 20)
-`
+`)
 
 class App extends React.Component {
   render() {
@@ -65,32 +65,17 @@ After you're done with the installation, place this in your `index.html`
 
 
 ## Usage
-No new api to learn. Just use 'stylus\`\`' and you are good to go.
+No new api to learn. Just use 'stylus(`stylus_code`)' and you are good to go.
 
 ```jsx
-const StyledDiv = stylus`
+const StyledDiv = stylus(`
 div
   padding 20px
   width 400px
-`
+`)
 
 <StyledDiv>Hello World</StyledDiv>
 ```
-
-### Creating a Stylus component
-
-To create a Stylus component, you need to pass an element name for eg - `button` like this 
-
-<p align="center">
-  <img src="./images/One.png">
-</p>
-
-**Note** - This will give error (**classname is not supported**)
-
-<p align="center">
-  <img src="./images/Two.png">
-</p>
-
 
 ## ** Supported Stylus features **
 
