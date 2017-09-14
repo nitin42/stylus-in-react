@@ -65,7 +65,7 @@ After you're done with the installation, place this in your `index.html`
 
 
 ## Usage
-No new api to learn. Just use 'stylus(`stylus_code`)' and you are good to go.
+No new api to learn. Just use `stylus(`stylus_code`)` and you are good to go.
 
 ```jsx
 const StyledDiv = stylus(`
