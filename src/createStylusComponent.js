@@ -7,7 +7,7 @@ const parseStylus = require('./parse');
  * @param {string} stylusCode 
  */
 function createStylusComponent(stylusCode) {
-  const { hash, element } = parseStylus(stylusCode[0]);
+  const { hash, element } = parseStylus(stylusCode);
 
   // Create stylus component
   class StylusComponent extends React.Component {
