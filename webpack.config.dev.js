@@ -30,5 +30,6 @@ module.exports = {
         ascii_only: true,
       }
     }) 
-  ]
+  ],
+  devtool: 'cheap-eval-source-maps'
 }
