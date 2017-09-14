@@ -7,8 +7,8 @@ const parseStylus = require('./parse');
  * These rules are then passed to glamor's css method and are inserted into stylesheet
  * @param {string} stylusCode 
  */
-function createStylusComponent(stylusCode) {
-  const { hash, element } = parseStylus(processStylusCode(stylusCode[0]));
+function createStylusComponent(stylusCode) {  
+  const { hash, element } = parseStylus(processStylusCode(stylusCode));
 
   // Create stylus component
   class StylusComponent extends React.Component {

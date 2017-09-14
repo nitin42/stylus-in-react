@@ -1,6 +1,7 @@
 const domElements = require('html-tags');
-const camelCase = require('camel-case');
-const prefixAll = require('inline-style-prefixer/static');
+const getRules = require('./basicRules');
+const mediaRules = require('./mediaRules');
+const supportRules = require('./supportsRules');
 
 /**
  * This function creates css rules (array of style objects)
@@ -14,32 +15,23 @@ function getStylesheet(rules, root) {
 
   let arr = [];
 
-  rules.forEach(rule => {
-    if (rule.type !== 'media') {
-      if (rule.selectors[0] === root) {
-        rule.declarations.forEach(decl => {
-          arr.push(prefixAll({ [camelCase(decl.property)]: decl.value }));
-        });
-      } else {
-        rule.declarations.forEach(decl => {
-          arr.push(prefixAll({ [rule.selectors[0].replace(root, '')]: { [camelCase(decl.property)]: decl.value } }));
-        });
-      }
-    } 
-    
-    if (rule.type === 'media') {
-      console.log(rule);
-      rule.rules.forEach(mediaRule => {
-        if (mediaRule.selectors[0] === root) {
-          mediaRule.declarations.forEach(decl => {
-            arr.push({ [`@media ${rule.media}`]: { [camelCase(decl.property)] : decl.value }});
-          });
-        }
-      });
-    }
-  });
+  arr.push(
+    ...getRules(rules, root),
+    ...supportRules(rules, root),
+    ...mediaRules(rules, root),
+  );
   
   return arr;
 }
 
 module.exports = getStylesheet;
+
+
+// stylusStr = `
+// button
+//   @import styledButton
+// `;
+
+// stylus.render(stylusStr, { filename: 'source.css' }, (err, css) => {
+//   const AST = parser.parse(css, { source: 'css' });
+// });

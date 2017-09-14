@@ -4,33 +4,24 @@ import renderer from 'react-test-renderer';
 import parser from '../utils/testParser';
 
 describe('stylus custom parser', () => {
-  test('sanity check', () => {
-    const DIV = `
+	test('sanity check', () => {
+		const DIV = `
     button
       color mistyrose
       border-radius 3px
     `;
-  
-    const data = parser(DIV);
-  
-    expect(data).toMatchObject({
-      "element": "button",
-      "hash": {
-        "data-css-1j9g9kt": "",
-      },
-      "stylesheet": [
-        {
-          "color": "#ffe4e1",
-        },
-        {
-          "borderRadius": "3px",
-        },
-      ],
-    });
-  });
-  
-  test('basic selector', () => {
-    const BUTTON = `
+
+		const data = parser(DIV);
+
+		expect(data).toMatchObject({
+			element: 'button',
+			hash: { 'data-css-1j9g9kt': '' },
+			stylesheet: [{ borderRadius: '3px', color: '#ffe4e1' }],
+		});
+	});
+
+	test('basic selector', () => {
+		const BUTTON = `
     button
       border-radius 4px
       border 2px solid grey
@@ -38,42 +29,42 @@ describe('stylus custom parser', () => {
       &:hover
         color purple
     `;
-  
-    const data = parser(BUTTON);
-  
-    expect(data).toMatchSnapshot();
-  });
-  
-  test('pythonic nature i.e gives errors on wrong indentation', () => {
-    const BUTTON = `
+
+		const data = parser(BUTTON);
+
+		expect(data).toMatchSnapshot();
+	});
+
+	test('pythonic nature i.e gives errors on wrong indentation', () => {
+		const BUTTON = `
     button
     border-radius 4px
     `;
-  
-    try {
-      const data = parser(BUTTON);
-    } catch(e) {
-      expect(e.message).toBe('Indentation error');
-    }
-  });
-  
-  test('works with functions', () => {
-    const BUTTON = `
+
+		try {
+			const data = parser(BUTTON);
+		} catch (e) {
+			expect(e.message).toBe('Indentation error');
+		}
+	});
+
+	test('works with functions', () => {
+		const BUTTON = `
     plus(a, b)
       a + b
   
     button
       padding plus(10px, 20px)
     `;
-  
-    const data = parser(BUTTON);
-  
-    expect(data).toMatchSnapshot();
-    expect(data.stylesheet[0].padding).toBe('30px');
-  });
-  
-  test('works with pseudo selectors', () => {
-    const BUTTON = `
+
+		const data = parser(BUTTON);
+
+		expect(data).toMatchSnapshot();
+		expect(data.stylesheet[0].padding).toBe('30px');
+	});
+
+	test('works with pseudo selectors', () => {
+		const BUTTON = `
     button
       &:focus
         outline none
@@ -82,14 +73,14 @@ describe('stylus custom parser', () => {
       &:active
         outline none
     `;
-  
-    const data = parser(BUTTON);
-  
-    expect(data).toMatchSnapshot();
-  });
 
-  test('works with mixins', () => {
-    const BUTTON = `
+		const data = parser(BUTTON);
+
+		expect(data).toMatchSnapshot();
+	});
+
+	test('works with mixins', () => {
+		const BUTTON = `
     button-styles(radius, border-width, color, type)
       border-radius n
       border border-width type color
@@ -97,40 +88,40 @@ describe('stylus custom parser', () => {
     button
       button-style(4px, 3px, grey, solid)
     `;
-  
-    const data = parser(BUTTON);
-  
-    expect(data).toMatchSnapshot();
-  });
 
-  test('works with built-in functions', () => {
-    const BUTTON = `
+		const data = parser(BUTTON);
+
+		expect(data).toMatchSnapshot();
+	});
+
+	test('works with built-in functions', () => {
+		const BUTTON = `
     button
       color green(#000, 255)
       background-color lighten(mistyrose, 30)
     `;
-  
-    const data = parser(BUTTON);
-  
-    expect(data).toMatchSnapshot();
-  });
 
-  test('works with rest params', () => {
-    const DIV = `
+		const data = parser(BUTTON);
+
+		expect(data).toMatchSnapshot();
+	});
+
+	test('works with rest params', () => {
+		const DIV = `
     box-shadow(args ...)
       box-shadow args
     
     div
       box-shadow 1px 2px 5px #eee
     `;
-  
-    const data = parser(DIV);
-  
-    expect(data).toMatchSnapshot();
-  })
 
-  test('works with @block', () => {
-    const DIV = `
+		const data = parser(DIV);
+
+		expect(data).toMatchSnapshot();
+	});
+
+	test('works with @block', () => {
+		const DIV = `
     foo = @block {
       width: 20px
       height: 20px
@@ -139,27 +130,27 @@ describe('stylus custom parser', () => {
     div
       {foo}
     `;
-  
-    const data = parser(DIV);
-  
-    expect(data).toMatchSnapshot();
-  });
 
-  test('throws error on invalid element', () => {
-    const DIV = `
+		const data = parser(DIV);
+
+		expect(data).toMatchSnapshot();
+	});
+
+	test('throws error on invalid element', () => {
+		const DIV = `
     d
       padding 10px
     `;
 
-    try {
-      const data = parser(DIV);
-    } catch(e) {
-      expect(e.message).toBe('\'d\' is not a valid HTML element.');
-    }
-  });
+		try {
+			const data = parser(DIV);
+		} catch (e) {
+			expect(e.message).toBe("'d' is not a valid HTML element.");
+		}
+	});
 
-  test('works with conditionals', () => {
-    const DIV = `
+	test('works with conditionals', () => {
+		const DIV = `
     overload-padding = true
     
     if overload-padding
@@ -170,24 +161,24 @@ describe('stylus custom parser', () => {
       padding 5px 10px
     `;
 
-    const data = parser(DIV);
-    
-    expect(data).toMatchSnapshot();
-  });
+		const data = parser(DIV);
 
-  test('works with char escaping', () => {
-    const DIV = `
+		expect(data).toMatchSnapshot();
+	});
+
+	test('works with char escaping', () => {
+		const DIV = `
     div
       padding (1 \+ 2)px
     `;
 
-    const data = parser(DIV);
-    
-    expect(data).toMatchSnapshot();
-  });
+		const data = parser(DIV);
 
-  test('works with operators (usage with mixins)', () => {
-    const DIV = `
+		expect(data).toMatchSnapshot();
+	});
+
+	test('works with operators (usage with mixins)', () => {
+		const DIV = `
     pad(types = padding, n = 5px)
       if padding in types
         padding n
@@ -198,13 +189,13 @@ describe('stylus custom parser', () => {
       pad()
     `;
 
-    const data = parser(DIV);
-    
-    expect(data).toMatchSnapshot();
-  });
+		const data = parser(DIV);
 
-  test('works with interpolations', () => {
-    const BUTTON = `
+		expect(data).toMatchSnapshot();
+	});
+
+	test('works with interpolations', () => {
+		const BUTTON = `
     apply(prop, args)
       {prop} args
 
@@ -218,8 +209,8 @@ describe('stylus custom parser', () => {
       border-radius 1px 2px / 3px 4px
     `;
 
-    const data = parser(BUTTON);
-    
-    expect(data).toMatchSnapshot();
-  })
+		const data = parser(BUTTON);
+
+		expect(data).toMatchSnapshot();
+	});
 });

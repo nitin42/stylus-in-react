@@ -1,1 +1,5 @@
-module.exports = require('./createStylusComponent');
+module.exports = {
+  stylus: require('./createStylusComponent'),
+  keyframes: require('./keyframes'),
+  fontFace: require('./fontFace')
+};

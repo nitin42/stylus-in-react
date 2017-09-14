@@ -4,6 +4,7 @@ const glamor = require('glamor');
 
 const getStylesheet = require('./stylesheet');
 const getParentNode = require('./selectors');
+const getRootSelector = require('./getRootSelector');
 
 /**
  * This function takes a stylus code and parses it. It returns an object containing information
@@ -11,26 +12,22 @@ const getParentNode = require('./selectors');
  * @param { string } stylusCode 
  */
 function parseStylus(stylusCode) {
-  let AST, rules, stylesheet, hash, selectors, element;
+  let AST, rules, stylesheet, hash, selector, element;
 
   window.stylus.render(stylusCode, { filename: 'source.css' }, (err, css) => {
     // throws parse errors
     if (err) {
       throw new Error(err);
     }
-
+    
     // Generate css AST
     AST = parser.parse(css, { source: 'css' });
-
     // Get the root selector
-    selectors = AST.stylesheet.rules[0] !== undefined ? AST.stylesheet.rules[0].selectors : null;
-
+    selector = getRootSelector(AST);
     // Set the root element
-    element = getParentNode(selectors);
-
+    element = getParentNode(selector);
     // Style rules
     rules = AST.stylesheet.rules;
-
     // Create array of styles
     stylesheet = getStylesheet(rules, element);
     // Pass styles as css rules to glamor's css constructor

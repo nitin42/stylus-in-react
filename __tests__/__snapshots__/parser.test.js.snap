@@ -8,12 +8,8 @@ Object {
   },
   "stylesheet": Array [
     Object {
-      "borderRadius": "4px",
-    },
-    Object {
       "border": "2px solid #808080",
-    },
-    Object {
+      "borderRadius": "4px",
       "color": "#ffc0cb",
     },
     Object {
@@ -33,10 +29,8 @@ Object {
   },
   "stylesheet": Array [
     Object {
-      "width": "20px",
-    },
-    Object {
       "height": "20px",
+      "width": "20px",
     },
   ],
 }
@@ -50,10 +44,8 @@ Object {
   },
   "stylesheet": Array [
     Object {
-      "color": "#0f0",
-    },
-    Object {
       "backgroundColor": "#fff",
+      "color": "#0f0",
     },
   ],
 }
