@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 
 import stylus from '../src/index';
 
-const Container = stylus`
+const Container = stylus(`
 para-color = mistyrose
 
 div
@@ -15,9 +15,9 @@ div
   margin 10px
   >p
     color darken(para-color, 10)
-`
+`)
 
-const Input = stylus`
+const Input = stylus(`
 input
   padding 4px
   width 80px
@@ -29,9 +29,9 @@ input
     outline none
   &:hover
     width percentage(.15)
-`
+`)
 
-const Button = stylus`
+const Button = stylus(`
 choices = 3px 4px 5px 7px
 
 border-radius(n)
@@ -47,12 +47,13 @@ button
   &:hover
     background darken(mistyrose, 10)
     color white
+    border-radius 3px
   &:focus
     outline none
   cursor pointer
-`
+`)
 
-const Image = stylus`
+const Image = stylus(`
 image-styles(width, height, border, radius)
   margin-top 30px
   width width
@@ -62,7 +63,7 @@ image-styles(width, height, border, radius)
 
 img
   image-styles(200, 200, 3px, 4px)
-`
+`)
 
 class App extends Component {
   render() {
