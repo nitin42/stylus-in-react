@@ -1,4 +1,4 @@
-const camelCase = require("camel-case");
+const camelCase = require('camel-case')
 
 /**
  * This function creates an object of a @media rule
@@ -6,19 +6,19 @@ const camelCase = require("camel-case");
  * @param { string } root root selector
  */
 function assignProperty(rule, root) {
-  const styles = {};
+  const styles = {}
 
   rule.forEach(i => {
     if (i.selectors[0] === root) {
       i.declarations.forEach(declaration => {
         Object.assign(styles, {
           [camelCase(declaration.property)]: declaration.value
-        });
-      });
+        })
+      })
     }
-  });
+  })
 
-  return styles;
+  return styles
 }
 
 /**
@@ -27,15 +27,15 @@ function assignProperty(rule, root) {
  * @param { string } root root selector
  */
 function getMediaRules(rules, root) {
-  const arr = [];
+  const arr = []
 
   rules.forEach(rule => {
-    if (rule.type === "media") {
-      arr.push({ [`@media ${rule.media}`]: assignProperty(rule.rules, root) });
+    if (rule.type === 'media') {
+      arr.push({ [`@media ${rule.media}`]: assignProperty(rule.rules, root) })
     }
-  });
+  })
 
-  return arr;
+  return arr
 }
 
-module.exports = getMediaRules;
+module.exports = getMediaRules

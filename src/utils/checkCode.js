@@ -4,11 +4,11 @@
  * @param { name } constructor name 
  */
 function checkStylusCode(code, name) {
-  if (typeof code !== "string") {
+  if (typeof code !== 'string') {
     throw new Error(
       `${name} constructor expected a stylus string. You passed ${code}`
-    );
+    )
   }
 }
 
-module.exports = checkStylusCode;
+module.exports = checkStylusCode

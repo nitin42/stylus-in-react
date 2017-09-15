@@ -1,4 +1,4 @@
-const domElements = require("html-tags");
+const domElements = require('html-tags')
 
 /**
  * This function takes a selector array and returns the root selector.
@@ -8,15 +8,15 @@ const domElements = require("html-tags");
  */
 function getParentNode(selector) {
   if (selector !== null) {
-    const selectorName = selector[0].split(":")[0];
+    const selectorName = selector[0].split(':')[0]
 
     if (!domElements.includes(selectorName)) {
-      throw new Error(`'${selectorName}' is not a valid HTML element.`);
+      throw new Error(`'${selectorName}' is not a valid HTML element.`)
     }
-    return selectorName;
+    return selectorName
   }
 
-  return null;
+  return null
 }
 
-module.exports = getParentNode;
+module.exports = getParentNode

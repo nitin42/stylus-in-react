@@ -1,7 +1,7 @@
-const React = require("react");
-const processStylusCode = require("../utils/processStylusCode");
-const parseStylus = require("../parse/parse");
-const checkStylusCode = require("../utils/checkCode");
+const React = require('react')
+const processStylusCode = require('../utils/processStylusCode')
+const parseStylus = require('../parse/parse')
+const checkStylusCode = require('../utils/checkCode')
 
 /**
  * This function takes the stylus code, parses it and creates an object of css rules.
@@ -9,9 +9,9 @@ const checkStylusCode = require("../utils/checkCode");
  * @param {string} stylusCode 
  */
 function createStylusComponent(stylusCode, { displayName } = {}) {
-  checkStylusCode(stylusCode, "stylus()");
+  checkStylusCode(stylusCode, 'stylus()')
 
-  const { hash, element } = parseStylus(processStylusCode(stylusCode));
+  const { hash, element } = parseStylus(processStylusCode(stylusCode))
 
   /* eslint-disable react/prefer-stateless-function */
   class StylusComponent extends React.Component {
@@ -24,14 +24,14 @@ function createStylusComponent(stylusCode, { displayName } = {}) {
         },
         /* eslint-disable react/prop-types */
         this.props.children
-      );
+      )
     }
   }
 
   StylusComponent.displayName =
-    displayName && typeof displayName === "string" ? displayName : element;
+    displayName && typeof displayName === 'string' ? displayName : element
 
-  return StylusComponent;
+  return StylusComponent
 }
 
-module.exports = createStylusComponent;
+module.exports = createStylusComponent

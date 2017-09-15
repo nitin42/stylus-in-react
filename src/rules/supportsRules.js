@@ -1,4 +1,4 @@
-const getRules = require("./basicRules");
+const getRules = require('./basicRules')
 
 /**
  * This function returns an array of objects of @supports rules
@@ -6,14 +6,14 @@ const getRules = require("./basicRules");
  * @param { string } root root selector
  */
 function supportRules(rules, root) {
-  const arr = [];
+  const arr = []
 
   rules.forEach(rule => {
-    if (rule.type !== "supports") return;
-    arr.push(getRules(rule.rules, root));
-  });
+    if (rule.type !== 'supports') return
+    arr.push(getRules(rule.rules, root))
+  })
 
-  return arr;
+  return arr
 }
 
-module.exports = supportRules;
+module.exports = supportRules

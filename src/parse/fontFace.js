@@ -1,21 +1,21 @@
-const glamor = require("glamor");
-const parser = require("css");
-const camelCase = require("camel-case");
-const processStylusCode = require("../utils/processStylusCode");
-const checkStylusCode = require("../utils/checkCode");
+const glamor = require('glamor')
+const parser = require('css')
+const camelCase = require('camel-case')
+const processStylusCode = require('../utils/processStylusCode')
+const checkStylusCode = require('../utils/checkCode')
 
 /**
  * This function creates an object of @font-face rule declaration (property: value)
  * @param { array } rule
  */
 function getDeclaration(rule) {
-  const store = {};
+  const store = {}
 
   rule.declarations.forEach(decl => {
-    Object.assign(store, { [camelCase(decl.property)]: decl.value });
-  });
+    Object.assign(store, { [camelCase(decl.property)]: decl.value })
+  })
 
-  return store;
+  return store
 }
 
 /**
@@ -23,13 +23,13 @@ function getDeclaration(rule) {
  * @param { array } rules @font-face rules
  */
 function getFontFaceProps(rules) {
-  const store = {};
+  const store = {}
 
   rules.forEach(rule => {
-    Object.assign(store, getDeclaration(rule));
-  });
+    Object.assign(store, getDeclaration(rule))
+  })
 
-  return store;
+  return store
 }
 
 /**
@@ -37,37 +37,37 @@ function getFontFaceProps(rules) {
  * @param { string } stylusCode Stylus code
  */
 function fontFace(stylusCode) {
-  checkStylusCode(stylusCode, "fontFace()");
+  checkStylusCode(stylusCode, 'fontFace()')
 
-  let AST;
-  let rules;
-  let atFontFaceRules;
+  let AST
+  let rules
+  let atFontFaceRules
 
   /* eslint-disable no-undef */
   window.stylus.render(
     processStylusCode(stylusCode),
-    { filename: "source.css" },
+    { filename: 'source.css' },
     (err, css) => {
       if (err) {
-        throw new Error(err);
+        throw new Error(err)
       }
 
       // CSS ast
-      AST = parser.parse(css, { source: "css" });
+      AST = parser.parse(css, { source: 'css' })
 
-      if (AST.stylesheet.rules[0].type !== "font-face") {
-        throw new Error("Not a @font-face rule.");
+      if (AST.stylesheet.rules[0].type !== 'font-face') {
+        throw new Error('Not a @font-face rule.')
       }
 
       // @font-face rules
-      rules = AST.stylesheet.rules;
+      rules = AST.stylesheet.rules
 
       // get the font-family name
-      atFontFaceRules = getFontFaceProps(rules);
+      atFontFaceRules = getFontFaceProps(rules)
     }
-  );
+  )
 
-  return glamor.css.fontFace(atFontFaceRules);
+  return glamor.css.fontFace(atFontFaceRules)
 }
 
-module.exports = fontFace;
+module.exports = fontFace

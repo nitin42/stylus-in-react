@@ -1,9 +1,9 @@
-const parser = require("css");
-const glamor = require("glamor");
+const parser = require('css')
+const glamor = require('glamor')
 
-const getStylesheet = require("../utils/stylesheet");
-const getParentNode = require("../parse/selectors");
-const getRootSelector = require("../parse/getRootSelector");
+const getStylesheet = require('../utils/stylesheet')
+const getParentNode = require('../parse/selectors')
+const getRootSelector = require('../parse/getRootSelector')
 
 /**
  * This function takes the stylus code and parses it. It returns an object containing information
@@ -11,44 +11,44 @@ const getRootSelector = require("../parse/getRootSelector");
  * @param { string } stylusCode 
  */
 function parseStylus(stylusCode) {
-  let AST;
-  let rules;
-  let stylesheet;
-  let hash;
-  let selector;
-  let element;
+  let AST
+  let rules
+  let stylesheet
+  let hash
+  let selector
+  let element
 
   /* eslint-disable no-undef */
-  window.stylus.render(stylusCode, { filename: "source.css" }, (err, css) => {
+  window.stylus.render(stylusCode, { filename: 'source.css' }, (err, css) => {
     // throws parse errors
     if (err) {
-      throw new Error(err);
+      throw new Error(err)
     }
 
     // Generate css AST
-    AST = parser.parse(css, { source: "css" });
+    AST = parser.parse(css, { source: 'css' })
 
     // Get the root selector
-    selector = getRootSelector(AST);
+    selector = getRootSelector(AST)
 
     // Set the root element
-    element = getParentNode(selector);
+    element = getParentNode(selector)
 
     // Style rules
-    rules = AST.stylesheet.rules;
+    rules = AST.stylesheet.rules
 
     // Create array of styles
-    stylesheet = getStylesheet(rules, element);
+    stylesheet = getStylesheet(rules, element)
 
     // Pass styles as css rules to glamor's css constructor
-    hash = glamor.css(stylesheet);
-  });
+    hash = glamor.css(stylesheet)
+  })
 
   return {
     hash,
     element,
     stylesheet
-  };
+  }
 }
 
-module.exports = parseStylus;
+module.exports = parseStylus
