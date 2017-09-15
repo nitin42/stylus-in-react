@@ -1,11 +1,11 @@
-const parser = require('css');
-const camelCase = require('camel-case');
-const glamor = require('glamor');
-const stylus = require('stylus');
+const parser = require("css");
+const camelCase = require("camel-case");
+const glamor = require("glamor");
+const stylus = require("stylus");
 
-const getStylesheet = require('../src/stylesheet');
-const getParentNode = require('../src/selectors');
-const getRootSelector = require('../src/getRootSelector');
+const getStylesheet = require("../src/utils/stylesheet");
+const getParentNode = require("../src/parse/selectors");
+const getRootSelector = require("../src/parse/getRootSelector");
 
 /**
  * This function takes a stylus code and parses it. It returns an object containing information
@@ -15,14 +15,14 @@ const getRootSelector = require('../src/getRootSelector');
 function testParser(stylusCode) {
   let AST, rules, stylesheet, hash, selector, element;
 
-  stylus.render(stylusCode, { filename: 'source.css' }, (err, css) => {
+  stylus.render(stylusCode, { filename: "source.css" }, (err, css) => {
     // throws parse errors
     if (err) {
-      throw new Error('Indentation error');
+      throw new Error("Indentation error");
     }
-    
+
     // Generate css AST
-    AST = parser.parse(css, { source: 'css' });
+    AST = parser.parse(css, { source: "css" });
     // Get the root selector
     selector = getRootSelector(AST);
     // Set the root element
@@ -38,7 +38,7 @@ function testParser(stylusCode) {
   return {
     hash,
     element,
-    stylesheet,
+    stylesheet
   };
 }
 
