@@ -1,5 +1,6 @@
-const path = require('path');
+const path = require('path')
 const webpack = require('webpack')
+
 module.exports = {
   entry: path.resolve(__dirname, 'public/App.js'),
   output: {
@@ -8,7 +9,7 @@ module.exports = {
     publicPath: '/'
   },
   node: {
-    fs: "empty"
+    fs: 'empty'
   },
   module: {
     rules: [
@@ -23,13 +24,13 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,
-        comparisons: false,
+        comparisons: false
       },
       output: {
         comments: false,
-        ascii_only: true,
+        ascii_only: true
       }
-    }) 
+    })
   ],
   devtool: 'cheap-eval-source-maps'
 }

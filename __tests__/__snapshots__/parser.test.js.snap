@@ -117,9 +117,18 @@ Object {
 
 exports[`stylus custom parser works with mixins 1`] = `
 Object {
-  "element": undefined,
-  "hash": Object {},
-  "stylesheet": Object {},
+  "element": "button",
+  "hash": Object {
+    "data-css-wy342g": "",
+  },
+  "stylesheet": Array [
+    Object {
+      "color": "#f00",
+    },
+    Object {
+      "borderRadius": "3px",
+    },
+  ],
 }
 `;
 

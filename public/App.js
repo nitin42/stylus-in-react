@@ -1,80 +1,20 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
+const React = require('react')
+const { render } = require('react-dom')
 
-import stylus from '../src/index';
+// Stylus component examples
+// These are few examples but you can do pretty much everything you used to do with Stylus
+const Button = require('../examples/selectors')
+const ButtonMixin = require('../examples/mixins')
+const ButtonVar = require('../examples/variables')
+const ButtonMedia = require('../examples/media')
+const FadeInButton = require('../examples/animation')
+const ButtonFloat = require('../examples/supports')
+const Name = require('../examples/fontFace')
 
-const Container = stylus(`
-para-color = mistyrose
-
-div
-  display flex
-  flex-direction column
-  justify-content center
-  align-items center
-  padding 20px
-  margin 10px
-  >p
-    color darken(para-color, 10)
-`)
-
-const Input = stylus(`
-input
-  padding 4px
-  width 80px
-  border 1px solid pink
-  border-radius 3px
-  >p
-    color mistyrose
-  &:focus
-    outline none
-  &:hover
-    width percentage(.15)
-`)
-
-const Button = stylus(`
-choices = 3px 4px 5px 7px
-
-border-radius(n)
-  border-radius n
-
-button
-  margin-top 20px
-  border-radius(8px)
-  border 1px solid mistyrose
-  background white
-  color black
-  padding choices[3]
-  &:hover
-    background darken(mistyrose, 10)
-    color white
-    border-radius 3px
-  &:focus
-    outline none
-  cursor pointer
-`)
-
-const Image = stylus(`
-image-styles(width, height, border, radius)
-  margin-top 30px
-  width width
-  height height
-  border border solid mistyrose
-  border-radius radius
-
-img
-  image-styles(200, 200, 3px, 4px)
-`)
-
-class App extends Component {
+class App extends React.Component {
   render() {
-    return (
-      <Container>
-        <Input type="text" name="sample" />
-        <Image src='http://365.unsplash.com/assets/paul-jarvis-9530891001e7f4ccfcef9f3d7a2afecd.jpg' />
-        <Button>Submit</Button>
-      </Container>
-    );
+    return <FadeInButton>Submit</FadeInButton>
   }
 }
 
-render(<App />, document.getElementById('app'));
+render(<App />, document.getElementById('app'))
