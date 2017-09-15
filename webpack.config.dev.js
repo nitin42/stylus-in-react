@@ -1,11 +1,12 @@
-const path = require('path');
-const webpack = require('webpack')
+const path = require("path");
+const webpack = require("webpack");
+
 module.exports = {
-  entry: path.resolve(__dirname, 'public/App.js'),
+  entry: path.resolve(__dirname, "public/App.js"),
   output: {
-    filename: 'bundle.js',
+    filename: "bundle.js",
     path: path.resolve(__dirname),
-    publicPath: '/'
+    publicPath: "/"
   },
   node: {
     fs: "empty"
@@ -14,8 +15,8 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: ['node_modules'],
-        use: 'babel-loader'
+        exclude: ["node_modules"],
+        use: "babel-loader"
       }
     ]
   },
@@ -23,13 +24,13 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,
-        comparisons: false,
+        comparisons: false
       },
       output: {
         comments: false,
-        ascii_only: true,
+        ascii_only: true
       }
-    }) 
+    })
   ],
-  devtool: 'cheap-eval-source-map'
-}
+  devtool: "cheap-eval-source-map"
+};
