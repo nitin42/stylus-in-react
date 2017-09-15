@@ -37,7 +37,7 @@ After you're done with the installation, place this in your index.html
 
 ### Examples
 
-You can find all the examples [here]().
+You can find all the examples [here](../examples).
 
 ### Supported features
 
@@ -62,4 +62,4 @@ You can find all the examples [here]().
 
 ### API Reference
 
-You can the complete api reference [here]().
+You can the complete api reference [here](./api.md).
