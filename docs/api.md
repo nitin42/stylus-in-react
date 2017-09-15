@@ -22,8 +22,6 @@ button
 );
 ```
 
-renders -
-
 <p align="center">
   <img src="https://i.gyazo.com/1877d86f54964d1fe22424a807babee9.png">
 </p>
