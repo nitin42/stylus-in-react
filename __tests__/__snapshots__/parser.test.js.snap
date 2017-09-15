@@ -8,8 +8,12 @@ Object {
   },
   "stylesheet": Array [
     Object {
-      "border": "2px solid #808080",
       "borderRadius": "4px",
+    },
+    Object {
+      "border": "2px solid #808080",
+    },
+    Object {
       "color": "#ffc0cb",
     },
     Object {
@@ -29,8 +33,10 @@ Object {
   },
   "stylesheet": Array [
     Object {
-      "height": "20px",
       "width": "20px",
+    },
+    Object {
+      "height": "20px",
     },
   ],
 }
@@ -44,8 +50,10 @@ Object {
   },
   "stylesheet": Array [
     Object {
-      "backgroundColor": "#fff",
       "color": "#0f0",
+    },
+    Object {
+      "backgroundColor": "#fff",
     },
   ],
 }
@@ -109,9 +117,18 @@ Object {
 
 exports[`stylus custom parser works with mixins 1`] = `
 Object {
-  "element": undefined,
-  "hash": Object {},
-  "stylesheet": Object {},
+  "element": "button",
+  "hash": Object {
+    "data-css-wy342g": "",
+  },
+  "stylesheet": Array [
+    Object {
+      "color": "#f00",
+    },
+    Object {
+      "borderRadius": "3px",
+    },
+  ],
 }
 `;
 
