@@ -1,59 +1,19 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import { css } from 'glamor';
-const glamor = require('glamor');
+const React = require("react");
+const { render } = require("react-dom");
 
-import { stylus, keyframes, fontFace } from '../src/index';
+// Stylus component examples
+// These are few examples but you can do pretty much everything you used to do with Stylus
+const Button = require("../examples/selectors");
+const ButtonMixin = require("../examples/mixins");
+const ButtonVar = require("../examples/variables");
+const ButtonMedia = require("../examples/media");
+const FadeInButton = require("../examples/animation");
+const ButtonFloat = require("../examples/supports");
 
-const fadeIn = keyframes`
-animation-name = fadeIn
-
-@keyframes animation-name
-  for i in 0..10
-    {10% * i}
-      opacity (i/10)
-`
-
-const Title = stylus(`
-colors = red mistyrose blue orange
-
-  h2
-    animation ${fadeIn} 8s ease-in
-    padding 20px
-    color red
-    &:hover
-      color colors[2]
-    @media screen and (min-width: 500px)
-      color colors[3]
-`)
-
-const Geo = fontFace`
-@font-face
-  font-family Laugh
-  font-style normal
-  src url(Laugh.ttf)
-`
-
-const Name = stylus(`
-@supports not (display: flex)
-  div
-    float: left
-    padding: 30px
-    color mistyrose
-    font-family ${Geo}
-    &:hover
-      color blue
-      background-color yellow
-`)
-
-class App extends Component {
-	render() {
-		return (
-      <div>
-        <Name>More new features are coming 🔥</Name>
-      </div>
-		);
-	}
+class App extends React.Component {
+  render() {
+    return <Button>Submit</Button>;
+  }
 }
 
-render(<App />, document.getElementById('app'));
+render(<App />, document.getElementById("app"));
