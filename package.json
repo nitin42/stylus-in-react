@@ -57,9 +57,9 @@
     "precommit": "lint-staged",
     "test": "./node_modules/.bin/jest",
     "lint": "./node_modules/.bin/eslint ./src/",
-    "start": "NODE_ENV=development ./node_modules/.bin/webpack-dev-server --content-base ./public --config ./webpack.config.dev.js --hot",
+    "start": "NODE_ENV=development ./node_modules/.bin/webpack-dev-server --content-base ./public --config ./webpack/webpack.config.dev.js --hot",
     "prebuild": "rm -rf ./build",
-    "build": "NODE_ENV=production ./node_modules/.bin/webpack --config ./webpack.config.js --progress"
+    "build": "NODE_ENV=production ./node_modules/.bin/webpack --config ./webpack/webpack.config.js --progress"
   },
   "lint-staged": {
     "*.js": [
