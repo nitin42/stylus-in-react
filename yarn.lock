@@ -2423,6 +2423,12 @@ glamor@^2.20.40:
     prop-types "^15.5.10"
     through "^2.3.8"
 
+glamorous-stylus@1.0.0-beta4:
+  version "1.0.0-beta4"
+  resolved "https://registry.yarnpkg.com/glamorous-stylus/-/glamorous-stylus-1.0.0-beta4.tgz#cfebc287e68a9ba46a778f1f40e034a4054889a0"
+  dependencies:
+    stylus-in-react "^2.0.0"
+
 glob-base@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/glob-base/-/glob-base-0.3.0.tgz#dbb164f6221b1c0b1ccf82aea328b497df0ea3c4"
@@ -4946,6 +4952,17 @@ strip-indent@^2.0.0:
 strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
+
+stylus-in-react@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/stylus-in-react/-/stylus-in-react-2.0.0.tgz#57a949b68a733c9811ea5b50b085fe502c322bc4"
+  dependencies:
+    camel-case "^3.0.0"
+    common-tags "^1.4.0"
+    css "^2.2.1"
+    glamor "^2.20.40"
+    html-tags "^2.0.0"
+    inline-style-prefixer "^3.0.7"
 
 stylus@^0.54.5:
   version "0.54.5"
