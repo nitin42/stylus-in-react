@@ -14,7 +14,7 @@
     "inline-style-prefixer": "^3.0.7"
   },
   "peerDependencies": {
-    "react": "^15.6.1"
+    "react": "^16.0.0"
   },
   "repository": {
     "url": "https://github.com/nitin42/stylus-in-react",
