@@ -17,5 +17,5 @@ You can find the detailed documentation [here](./docs).
 
 MIT
 
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/FCRW65HPiwhNtebDx2tTc53E/nitin42/stylus-in-react'>  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/FCRW65HPiwhNtebDx2tTc53E/nitin42/stylus-in-react.svg' /></a>
+
 
